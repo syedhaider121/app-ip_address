@@ -5,6 +5,7 @@
   Assign the class definition to variable IPCIDR.
 */
 const IPCIDR = require('ip-cidr');
+
 /*
   Import the built-in path module.
   See https://nodejs.org/api/path.html
@@ -58,6 +59,7 @@ function getFirstIpAddress(cidrStr, callback) {
     [firstIpAddress] = cidr.toArray(options);
     mappedIpv6Address = getIpv4MappedIpv6Address(firstIpAddress);
   }
+  // return object
   let data = {
     "ipv4": firstIpAddress,
     "ipv6": mappedIpv6Address
